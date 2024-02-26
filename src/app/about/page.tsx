@@ -37,9 +37,9 @@ export default function AboutPage() {
             🌟 Self-Taught Junior Frontend Developer with Next.js Skills 🌟
           </h2>
           <p className="text-xs text-justify tracking-wide">
-            Hey there! I'm a passionate and self-taught junior Front-end
+            Hey there! I am a passionate and self-taught junior Front-end
             developer with a knack for building modern web applications using
-            Next.js . Through my journey of self-learning and exploration, I've
+            Next.js . Through my journey of self-learning and exploration, I have
             developed a strong foundation in web development and honed my skills
             in creating dynamic and engaging user interfaces.
           </p>

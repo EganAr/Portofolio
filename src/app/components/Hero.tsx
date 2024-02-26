@@ -32,7 +32,7 @@ export default function Hero() {
           />
 
           <p className="text-sm lg:text-md text-justify items-center tracking-wide">
-            Welcome to my profile! I'm a skilled and dedicated frontend
+            Welcome to my profile! I am a skilled and dedicated frontend
             developer specializing in Next.js, a cutting-edge framework that
             combines the power of React.js with advanced features like
             server-side rendering and static site generation.
