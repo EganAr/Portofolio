@@ -14,7 +14,7 @@ export default function Hero() {
       >
         <div className="flex flex-col gap-3 px-6 pt-4 md:pt-0 lg:px-14 lg:pt-12 max-w-2xl">
           <h1 className="text-3xl lg:text-3xl font-bold">
-            Hi, it's <span className="text-green-500">Egan</span>{" "}
+            {"Hi, it's"} <span className="text-green-500">Egan</span>{" "}
           </h1>
           <TypeAnimation
             sequence={[
