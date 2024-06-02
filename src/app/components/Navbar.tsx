@@ -7,11 +7,15 @@ import { usePathname } from "next/navigation";
 export default function Navbar() {
   const pathname = usePathname();
   return (
-    <div className="flex flex-col lg:flex-row justify-between px-14 pt-10 gap-4 sm:px-10 sm:pt-8 ">
-      <h1 className="lg:text-xl sm:text-lg flex justify-center lg:justify-start">
-        Ega<span className="text-green-400">n Arden</span>na
+    <div className="flex flex-row justify-between px-6 lg:px-14  pt-4 lg:pt-8 gap-4">
+      <h1 className="lg:text-xl md:text-lg text-base flex justify-start">
+        Ega
+        <span className="bg-clip-text text-transparent bg-gradient-to-r from-green-400 to-purple-600">
+          n Arden
+        </span>
+        na
       </h1>
-      <div className="flex lg:flex-col sm:flex-row justify-center gap-3 lg:gap-1 text-sm ">
+      <div className="flex flex-col justify-center gap-1 text-xs lg:text-sm ">
         <Link
           href={"/"}
           className="transition-all duration-500 hover:text-purple-700"

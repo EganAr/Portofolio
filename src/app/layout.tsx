@@ -2,10 +2,10 @@ import type { Metadata } from "next";
 import { Poppins } from "next/font/google";
 import "./globals.css";
 import Navbar from "./components/Navbar";
-import Footer from "./components/Footer";
 import StarsCanvas from "./components/Stars";
+import Footer from "./components/Footer";
 
-const inter = Poppins({ weight: "400", subsets: ["latin"] });
+const inter = Poppins({ weight: "300", subsets: ["latin"] });
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -22,7 +22,7 @@ export default function RootLayout({
       <body
         className={`${inter.className} w-screen h-screen bg-gradient-to-r from-green-400 to-purple-700 flex justify-center items-center`}
       >
-        <main className="overflow-hidden bg-black w-full max-w-[1100px] h-full sm:max-h-[600px] lg:max-h-[550px] text-white">
+        <main className="overflow-hidden bg-black w-full max-w-[95vw] md:max-w-[90vw] lg:max-w-[90vw] h-full max-h-[90vh] text-white">
           <Navbar />
           <StarsCanvas />
           {children}

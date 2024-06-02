@@ -6,6 +6,7 @@ import { toast } from "@/components/ui/use-toast";
 import { useRouter } from "next/navigation";
 import { useFormState, useFormStatus } from "react-dom";
 import { z } from "zod";
+import Footer from "./Footer";
 
 const formSchema = z.object({
   email: z.string().min(2, { message: "Email is required" }).max(50),
@@ -52,14 +53,16 @@ export default function Form() {
 
   return (
     <>
-      <div className="px-32 pt-12 lg:pt-0">
+    <title>Contact</title>
+
+      <div className="px-8 lg:px-20 pt-12 md:pt-4 lg:pt-0">
         <h1 className="text-xl">Contact Me</h1>
         <h1 className="border-b border-black max-w-[100px] pt-0.5 bg-clip-border bg-gradient-to-r from-green-400 to-purple-700"></h1>
       </div>
 
       <form
         onSubmit={handleSubmit}
-        className="w-full px-8 lg:px-32 py-5 flex flex-col gap-4"
+        className="w-full px-8 lg:px-20 py-5 flex flex-col gap-4"
       >
         <Input
           type="email"
