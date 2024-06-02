@@ -20,9 +20,9 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${inter.className} w-screen h-screen bg-gradient-to-r from-green-400 to-purple-700 flex justify-center items-center`}
+        className={`${inter.className} w-screen h-screen max-w-[100vw] max-h-[100vh] bg-gradient-to-r from-green-400 to-purple-700 flex justify-center items-center`}
       >
-        <main className="overflow-hidden bg-black w-full max-w-[95vw] md:max-w-[90vw] lg:max-w-[90vw] h-full max-h-[90vh] text-white">
+        <main className="overflow-hidden bg-black w-full max-w-[95vw] md:max-w-[90vw] lg:max-w-[90vw] h-full max-h-[90svh] text-white">
           <Navbar />
           <StarsCanvas />
           {children}

@@ -8,7 +8,7 @@ import Link from "next/link";
 
 export default function Footer() {
   return (
-    <div className="w-full max-w-[370px] md:max-w-[750px] lg:max-w-[1100px] h-8 md:h-24 lg:h-24 justify-between items-center hidden md:flex  lg:flex ">
+    <div className="justify-between items-center hidden md:flex  lg:flex ">
       <Link href={"https://github.com/EganAr"}>
         <LucideGithub className="w-6 h-6 lg:w-7 lg:h-7 transition-all duration-500 hover:text-purple-400 absolute bottom-12 left-5 md:left-[9vw] lg:left-[9%] mt-20 md:mt-0 lg:mt-0" />
       </Link>

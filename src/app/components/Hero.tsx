@@ -6,16 +6,25 @@ import { TypeAnimation } from "react-type-animation";
 
 export default function Hero() {
   return (
-    <div className="flex flex-col-reverse lg:flex-row lg:gap-2 lg:pt-2 ">
+    <div className="flex flex-col-reverse lg:flex-row justify-center items-center lg:gap-2 lg:pt-2 ">
       <motion.div
         initial="hidden"
         animate="visible"
         variants={slideInFromLeft(0.5)}
       >
-        <div className="flex flex-col gap-3 px-6 pt-4 md:pt-0 lg:px-14 lg:pt-12 max-w-2xl">
-          <h1 className="text-3xl lg:text-3xl font-bold">
-            {"Hi, it's"} <span className="text-green-500">Egan</span>{" "}
-          </h1>
+        <div className="flex flex-col gap-3 px-6 pt-4 md:pt-0 lg:px-3 lg:pt-12 max-w-2xl">
+          <div className="flex justify-between items-center">
+            <h1 className="text-3xl lg:text-3xl font-bold">
+              {"Hi, it's"} <span className="text-green-500">Egan</span>{" "}
+            </h1>
+            <a
+              href="portfolio.pdf"
+              download
+              className="flex justify-center items-center lg:hidden ml-6 md:ml-4 text-xs w-24 h-6 font-bold bg-green-300 hover:opacity-90 transition-all duration-500 text-black rounded-xl "
+            >
+              Download cv
+            </a>
+          </div>
           <TypeAnimation
             sequence={[
               "Frontend Web Developer",
@@ -69,19 +78,12 @@ export default function Hero() {
                 height={100}
                 className="w-6 h-6 bg-white rounded-full lg:w-8 lg:h-8"
               />
-              <a
-                href="/images/SnAnimelist.png"
-                download
-                className="lg:hidden ml-2 md:ml-4 text-xs w-48 md:w-24 font-bold py-1 px-2 bg-green-300 hover:opacity-90 transition-all duration-500 text-black rounded-xl "
-              >
-                Download cv
-              </a>
             </div>
           </div>
           <a
             href="portfolio.pdf"
             download
-            className="hidden lg:block text-sm w-24 lg:w-28 font-bold p-2 bg-green-300 hover:opacity-90 transition-all duration-500 text-black rounded-xl "
+            className="hidden lg:block text-sm w-28 font-bold p-2 bg-green-300 hover:opacity-90 transition-all duration-500 text-black rounded-xl "
           >
             Download cv
           </a>
@@ -91,7 +93,7 @@ export default function Hero() {
         initial="hidden"
         animate="visible"
         variants={slideInFromRight(0.5)}
-        className="w-full lg:w-96 flex justify-center items-center"
+        className="w-full lg:w-96 flex justify-center items-center pt-4 lg:pt-0"
       >
         <Image
           src="https://github.com/EganAr.png"
