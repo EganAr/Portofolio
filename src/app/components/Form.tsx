@@ -1,90 +1,43 @@
 "use client";
 
+import { sendEmail } from "@/actions/sendEmail";
 import { Button } from "@/components/ui/button";
-import { Input } from "@/components/ui/input";
-import { toast } from "@/components/ui/use-toast";
-import { useRouter } from "next/navigation";
-import { useFormState, useFormStatus } from "react-dom";
-import { z } from "zod";
-import Footer from "./Footer";
-
-const formSchema = z.object({
-  email: z.string().min(2, { message: "Email is required" }).max(50),
-  name: z.string().min(2, { message: "Name is required" }).max(50),
-  message: z.string().min(2, { message: "Message is required" }).max(500),
-});
-
-function SubmitButton() {
-  const { pending } = useFormStatus();
-
-  return (
-    <Button type="submit" aria-disabled={pending}>
-      Submit
-    </Button>
-  );
-}
+import { Send } from "lucide-react";
+import toast from "react-hot-toast";
 
 export default function Form() {
-  const router = useRouter();
-  async function handleSubmit(event: any) {
-    event.preventDefault();
-    const formData = new FormData(event.target);
-
-    formData.append("access_key", "3585da58-799a-409b-b292-bcc5bdebb8b8");
-
-    const object = Object.fromEntries(formData);
-    const json = JSON.stringify(object);
-
-    const response = await fetch("https://api.web3forms.com/submit", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-        Accept: "application/json",
-      },
-      body: json,
-    });
-    const result = await response.json();
-    if (result.success) {
-      router.push("/success");
-    } else {
-      router.push("/failed");
-    }
-  }
-
   return (
     <>
-    <title>Contact</title>
+      <title>Contact</title>
 
-      <div className="px-8 lg:px-20 pt-12 md:pt-4 lg:pt-0">
-        <h1 className="text-xl">Contact Me</h1>
-        <h1 className="border-b border-black max-w-[100px] pt-0.5 bg-clip-border bg-gradient-to-r from-green-400 to-purple-700"></h1>
+      <div className="px-8 lg:px-20 pt-4 md:pt-0 lg:pt-0">
+        <h1 className="text-lg font-thin">Contact Me</h1>
       </div>
 
       <form
-        onSubmit={handleSubmit}
-        className="w-full px-8 lg:px-20 py-5 flex flex-col gap-4"
+        className="w-full px-8 lg:px-20 py-4 flex flex-col gap-2"
+        action={async (FormData) => {
+          await sendEmail(FormData).then(() => {
+            toast.success("Message Sent");
+          });
+        }}
       >
-        <Input
+        <input
           type="email"
           name="email"
-          placeholder="Email"
-          className="bg-black border bg-clip-border border-gray-300"
-          required
-        />
-        <Input
-          type="text"
-          name="name"
-          className="bg-black border bg-clip-border border-gray-300"
-          placeholder="Your Name"
+          placeholder="email"
+          className="rounded-md border bg-clip-border border-gray-300 bg-black px-3 py-3 mt-2 text-sm ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none "
           required
         />
         <textarea
-          name="message"
-          className="h-32 rounded-md border border-input bg-black px-3 py-2 text-sm ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50"
+          className="h-32 lg:h-44 rounded-md border bg-clip-border border-gray-300 bg-black px-3 py-2 mt-3 text-sm ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none "
           placeholder="Your Message"
+          name="message"
           required
         />
-        <SubmitButton />
+        <Button className="mt-3 lg:mt-2 w-32">
+          Submit <Send className="w-4 h-4 ml-3" />
+        </Button>
       </form>
     </>
   );

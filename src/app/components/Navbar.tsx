@@ -8,11 +8,9 @@ export default function Navbar() {
   const pathname = usePathname();
   return (
     <div className="flex flex-row justify-between px-6 lg:px-14  pt-4 lg:pt-8 gap-4">
-      <h1 className="lg:text-xl md:text-lg text-base flex justify-start">
+      <h1 className="lg:text-xl font-medium md:text-lg text-base flex justify-start ">
         Ega
-        <span className="bg-clip-text text-transparent bg-gradient-to-r from-green-400 to-purple-600">
-          n Arden
-        </span>
+        <span className="">n Arden</span>
         na
       </h1>
       <div className="flex flex-col justify-center gap-1 text-xs lg:text-sm ">

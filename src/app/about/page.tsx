@@ -4,7 +4,6 @@ import Image from "next/image";
 import { slideInFromLeft, slideInFromRight } from "../../../utils/motion";
 import { ArrowUpRight, MapPin } from "lucide-react";
 import Link from "next/link";
-import Footer from "../components/Footer";
 
 export default function AboutPage() {
   return (
