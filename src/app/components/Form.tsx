@@ -2,10 +2,25 @@
 
 import { sendEmail } from "@/actions/sendEmail";
 import { Button } from "@/components/ui/button";
-import { Send } from "lucide-react";
+import { Loader2, Send } from "lucide-react";
+import { useState } from "react";
 import toast from "react-hot-toast";
 
 export default function Form() {
+  const [loading, setLoading] = useState(false);
+
+  const handleSubmit = async (FormData: FormData) => {
+    try {
+      setLoading(true);
+      sendEmail(FormData);
+      new Promise((resolve) => setTimeout(resolve, 2000)).then(() => {
+        setLoading(false);
+        toast.success("Message Sent");
+      });
+    } catch (error) {
+      toast.error("Message Not Sent");
+    }
+  };
   return (
     <>
       <title>Contact</title>
@@ -16,11 +31,7 @@ export default function Form() {
 
       <form
         className="w-full px-8 lg:px-20 py-4 flex flex-col gap-2"
-        action={async (FormData) => {
-          await sendEmail(FormData).then(() => {
-            toast.success("Message Sent");
-          });
-        }}
+        action={handleSubmit}
       >
         <input
           type="email"
@@ -35,9 +46,16 @@ export default function Form() {
           name="message"
           required
         />
-        <Button className="mt-3 lg:mt-2 w-32">
-          Submit <Send className="w-4 h-4 ml-3" />
-        </Button>
+
+        {loading === true ? (
+          <Button className="mt-3 lg:mt-2 w-32">
+            <Loader2 className="w-5 h-5 mr-2 animate-spin" />
+          </Button>
+        ) : (
+          <Button className="mt-3 lg:mt-2 w-32">
+            Submit <Send className="w-4 h-4 ml-3" />
+          </Button>
+        )}
       </form>
     </>
   );
