@@ -12,8 +12,8 @@ export default function Form() {
   const handleSubmit = async (FormData: FormData) => {
     try {
       setLoading(true);
-      sendEmail(FormData);
       new Promise((resolve) => setTimeout(resolve, 2000)).then(() => {
+        sendEmail(FormData);
         setLoading(false);
         toast.success("Message Sent");
       });
