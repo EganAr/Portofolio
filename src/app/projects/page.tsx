@@ -20,7 +20,7 @@ export default function CardWithForm() {
           <div className="flex items-center gap-3 pt-2">
             <h1 className="text-sm md:text-lg lg:text-lg">Sn ecommerce</h1>
             <Link
-              href="https://sn-blog-rho.vercel.app/"
+              href="https://sn-ecommerce.vercel.app/"
               className="flex gap-2 px-2 py-2 md:py-1.5 lg:py-1.5  text-white bg-red-700 hover:bg-red-800 transition-all duration-500 rounded "
             >
               <ArrowUpRight size={16} /> <p className="text-xs ">Visit App</p>
