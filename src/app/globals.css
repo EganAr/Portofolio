@@ -74,3 +74,20 @@
     @apply bg-background text-foreground;
   }
 }
+
+ main {
+  width: 90vw;
+  height: 90vh;
+  color: white;
+  background-color: black;
+  border-radius: 5px;
+  overflow: hidden;
+}
+
+@media screen and (max-width: 768px) {
+  main {
+    width: 95vw;
+    height: 90vh;
+    overflow: scroll;
+  }
+}

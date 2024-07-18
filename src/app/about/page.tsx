@@ -1,45 +1,54 @@
 "use client";
-import { motion } from "framer-motion";
+import { AnimatePresence, motion } from "framer-motion";
 import Image from "next/image";
 import { slideInFromLeft, slideInFromRight } from "../../../utils/motion";
 import { ArrowUpRight, MapPin } from "lucide-react";
 import Link from "next/link";
+import IntroPage from "../components/Intro";
+import { useEffect, useState } from "react";
 
 export default function AboutPage() {
+  const [visible, isVisible] = useState(true);
+
+  useEffect(() => {
+    setTimeout(() => {
+      isVisible(false);
+    }, 1500);
+  }, []);
+
   return (
     <div>
       <title>About</title>
 
-      <div className="flex flex-col md:flex-row lg:flex-row gap-4 justify-center items-center mx-6 lg:mx-auto mt-10 md:mt-4 lg:mt-0 h-96">
+      <AnimatePresence>
+        {visible && <IntroPage children="about" />}
+      </AnimatePresence>
+
+      <div className="flex flex-col md:flex-row lg:flex-row gap-4 justify-center items-center mx-6 lg:mx-auto mt-6 lg:mt-4">
         <motion.div
           initial="hidden"
           animate="visible"
-          variants={slideInFromLeft(0.5)}
-          className="flex flex-row md:flex-col lg:flex-col gap-6 md:gap-2 lg:gap-0 justify-center items-center bg-neutral-950 w-full md:w-[300px] lg:w-[300px] h-[200px] md:h-[368px] lg:h-[320px] rounded-lg"
+          variants={slideInFromLeft(2)}
+          className="flex flex-row md:flex-col lg:flex-col gap-8 md:gap-8 lg:gap-4 justify-center items-center bg-neutral-950 w-full md:w-[300px] lg:w-[350px] h-[200px] md:h-[395px] lg:h-[380px] rounded-lg"
         >
           <Image
             src={"https://github.com/EganAr.png"}
             alt=""
-            width={2000}
-            height={2000}
-            className="w-[150px] h-[150px] lg:w-[200px] lg:h-[200px] rounded-lg brightness-75 "
+            width={1000}
+            height={1000}
+            className="w-[150px] h-[150px] md:w-[170px] md:h-[160px] lg:w-[300px] lg:h-[250px] rounded-lg brightness-75 object-cover "
           />
-          <div className="flex flex-col md:flex-row lg:flex-row items-start md:items-center lg:items-center gap-2 font-bold mt-3 ">
-            <h1 className="text-sm border-r pr-2 lg:pr-2">Skills</h1>
-            <div className="w-90 grid grid-cols-3 lg:grid-cols-5 gap-5 md:gap-4 lg:gap-3 mt-2">
+          <div className="flex flex-col lg:flex-row items-start lg:items-center gap-2 font-bold mt-2 px-2">
+            <h1 className="hidden md:block lg:block text-base lg:border-r pr-2">
+              Skills
+            </h1>
+            <div className="grid grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-3 md:gap-4 lg:gap-4">
               <Image
                 src={"https://cdn.worldvectorlogo.com/logos/html-1.svg"}
                 alt="html"
                 width={100}
                 height={100}
                 className="w-6 h-6 "
-              />
-              <Image
-                src={"https://cdn.worldvectorlogo.com/logos/next-js.svg"}
-                alt="html"
-                width={100}
-                height={100}
-                className="w-6 h-6 bg-white rounded-full "
               />
               <Image
                 src={"https://cdn.worldvectorlogo.com/logos/css-3.svg"}
@@ -56,6 +65,13 @@ export default function AboutPage() {
                 className="w-6 h-6 "
               />
               <Image
+                src={"https://cdn.worldvectorlogo.com/logos/typescript.svg"}
+                alt="html"
+                width={100}
+                height={100}
+                className="w-6 h-6 "
+              />
+              <Image
                 src={"https://cdn.worldvectorlogo.com/logos/react-2.svg"}
                 alt="html"
                 width={100}
@@ -63,11 +79,11 @@ export default function AboutPage() {
                 className="w-6 h-6 "
               />
               <Image
-                src={"https://cdn.worldvectorlogo.com/logos/typescript.svg"}
+                src={"https://cdn.worldvectorlogo.com/logos/next-js.svg"}
                 alt="html"
                 width={100}
                 height={100}
-                className="w-6 h-6 "
+                className="w-6 h-6 bg-white rounded-full "
               />
 
               <Image
@@ -91,39 +107,53 @@ export default function AboutPage() {
                 height={100}
                 className="w-6 h-6 rounded-full "
               />
+              <Image
+                src={"https://cdn.worldvectorlogo.com/logos/gsap-greensock.svg"}
+                alt="html"
+                width={100}
+                height={100}
+                className="w-6 h-6 rounded-full "
+              />
+              <Image
+                src={"https://cdn.worldvectorlogo.com/logos/framer-motion.svg"}
+                alt="html"
+                width={100}
+                height={100}
+                className="w-6 h-6 rounded-full "
+              />
             </div>
           </div>
         </motion.div>
 
-        <div className="flex flex-row md:flex-col lg:flex-col gap-2 md:gap-4 lg:gap-5">
+        <div className="flex flex-col gap-4">
           <motion.div
             initial="hidden"
             animate="visible"
-            variants={slideInFromRight(0.5)}
-            className="flex flex-col w-full md:w-[450px] lg:w-[600px] bg-neutral-950 rounded h-[250px] md:h-[190px] lg:h-[150px]"
+            variants={slideInFromRight(2)}
+            className="flex flex-col w-full md:w-[450px] lg:w-[600px] bg-neutral-950 rounded h-[220px] md:h-[190px] lg:h-[180px]"
           >
             <h2 className="text-sm md:text-bae lg:text-base text-left font-semibold pt-4 px-2 md:px-4 lg:px-4">
-              🌟 Self-Taught Junior Frontend Developer with Next.js Skills 🌟
+              🌟 Self-Taught Frontend Developer 🌟
             </h2>
             <h1 className="flex items-center px-[18px] gap-x-3 py-2 text-xs text-gray-600">
               <MapPin size={16} className="text-red-700" /> Bandung, Indonesia
             </h1>
 
             <p className="text-xs text-gray-400 text-justify tracking-wide px-4">
-              Hey there! I am a passionate and self-taught junior Front-end
-              developer with a knack for building modern web applications using
-              Next.js . Through my journey of self-learning and exploration, I
-              have developed a strong foundation in web development and honed my
+              Hey there! I am a passionate and self-taught Front-end developer
+              with a knack for building modern web applications using Next.js .
+              Through my journey of self-learning and exploration, I have
+              developed a strong foundation in web development and honed my
               skills in creating dynamic and engaging user interfaces.
             </p>
           </motion.div>
           <motion.div
             initial="hidden"
             animate="visible"
-            variants={slideInFromRight(0.5)}
-            className="md:flex md:flex-col lg:flex lg:flex-col w-[200px] md:w-[450px] lg:w-[600px] bg-neutral-950 rounded md:h-[160px] lg:h-[150px] hidden"
+            variants={slideInFromRight(2)}
+            className="flex flex-col w-full md:w-[450px] lg:w-[600px] bg-neutral-950 rounded h-[220px] md:h-[190px] lg:h-[180px] mb-12 md:mb-0 lg:mb-0"
           >
-            <h1 className="text-center lg:text-left font-semibold pt-4 pb-2 px-4">
+            <h1 className="text-left font-semibold pt-4 pb-2 px-4 ">
               🌟 Experience 🌟
             </h1>
 
@@ -137,7 +167,7 @@ export default function AboutPage() {
                 <p className="text-xs">Visit Blog App</p>
               </Link>
             </h2>
-            <p className="text-xs text-gray-400 text-justify tracking-wide px-4 hidden md:block lg:block">
+            <p className="text-xs text-gray-400 text-justify tracking-wide px-4 ">
               I created scalable and maintainable web applications that provide
               seamless user experiences. My portfolio includes a comprehensive
               blog application featuring user authentication, blog management,

@@ -25,7 +25,7 @@ export default function Form() {
     <>
       <title>Contact</title>
 
-      <div className="px-8 lg:px-20 pt-4 md:pt-0 lg:pt-0">
+      <div className="px-8 lg:px-20 pt-4 lg:pt-0">
         <h1 className="text-lg font-thin">Contact Me</h1>
       </div>
 
@@ -41,19 +41,19 @@ export default function Form() {
           required
         />
         <textarea
-          className="h-32 lg:h-44 rounded-md border bg-clip-border border-gray-300 bg-black px-3 py-2 mt-3 text-sm ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none "
+          className="h-32 md:h-44 lg:h-44 rounded-md border bg-clip-border border-gray-300 bg-black px-3 py-2 mt-3 text-sm ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none "
           placeholder="Your Message"
           name="message"
           required
         />
 
         {loading === true ? (
-          <Button className="mt-3 lg:mt-2 w-32">
-            <Loader2 className="w-5 h-5 mr-2 animate-spin" />
+          <Button className="mt-3 flex justify-center items-center w-32 ">
+            <Loader2 className="w-6 h-6 animate-spin" />
           </Button>
         ) : (
-          <Button className="mt-3 lg:mt-2 w-32">
-            Submit <Send className="w-4 h-4 ml-3" />
+          <Button className="w-32 flex gap-3 mt-3">
+            Submit <Send className="w-4 h-4" />
           </Button>
         )}
       </form>

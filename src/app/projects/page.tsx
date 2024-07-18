@@ -1,12 +1,29 @@
-import * as React from "react";
+"use client"
+
 import Image from "next/image";
 import Link from "next/link";
 import { ArrowUpRight } from "lucide-react";
 import Desc, { Desc2 } from "../components/Desc";
+import { useEffect, useState } from "react";
+import { AnimatePresence } from "framer-motion";
+import IntroPage from "../components/Intro";
+
 export default function CardWithForm() {
+  const [visible, isVisible] = useState(true);
+
+  useEffect(() => {
+    setTimeout(() => {
+      isVisible(false);
+    }, 1500);
+  }, []);
+
   return (
     <>
       <title>Projects</title>
+
+      <AnimatePresence>
+        {visible && <IntroPage children="project" />}
+      </AnimatePresence>
 
       <div className="overflow-y-auto overflow-hidden md:overflow-hidden lg:overflow-hidden h-[430px] flex flex-col md:flex-row lg:flex-row justify-between items-start mt-2 mx-8 md:mx-6 lg:mx-20 gap-4">
         <div className="bg-[#0c0b0b] w-[600px] md:w-[500px] lg:w-[500px] md:h-[370px] lg:h-[350px] flex flex-col gap-2 items-start justify-start px-6 py-4 ">
