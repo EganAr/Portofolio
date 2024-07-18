@@ -21,7 +21,7 @@ export default function AboutPage() {
       <title>About</title>
 
       <AnimatePresence>
-        {visible && <IntroPage children="about" />}
+        {visible && <IntroPage>about</IntroPage>}
       </AnimatePresence>
 
       <div className="flex flex-col md:flex-row lg:flex-row gap-4 justify-center items-center mx-6 lg:mx-auto mt-6 lg:mt-4">

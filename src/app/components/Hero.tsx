@@ -20,7 +20,7 @@ export default function Hero() {
   return (
     <>
       <AnimatePresence>
-        {visible && <IntroPage children="welcome" />}
+        {visible && <IntroPage>welcome</IntroPage>}
       </AnimatePresence>
       <div className="flex flex-col-reverse lg:flex-row justify-center items-center lg:gap-2 lg:pt-2 ">
         <motion.div

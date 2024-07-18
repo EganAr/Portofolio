@@ -19,7 +19,7 @@ export default function Contact() {
       <title>Contact</title>
 
       <AnimatePresence>
-        {visible && <IntroPage children="contact" />}
+        {visible && <IntroPage>contact</IntroPage>}
       </AnimatePresence>
 
       <Form />

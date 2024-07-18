@@ -22,7 +22,7 @@ export default function CardWithForm() {
       <title>Projects</title>
 
       <AnimatePresence>
-        {visible && <IntroPage children="project" />}
+        {visible && <IntroPage>project</IntroPage>}
       </AnimatePresence>
 
       <div className="overflow-y-auto overflow-hidden md:overflow-hidden lg:overflow-hidden h-[430px] flex flex-col md:flex-row lg:flex-row justify-between items-start mt-2 mx-8 md:mx-6 lg:mx-20 gap-4">

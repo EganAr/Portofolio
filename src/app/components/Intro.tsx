@@ -5,7 +5,7 @@ const DURATION = 0.25;
 const DELAY = 0.025;
 
 export default function IntroPage({
-  children = null,
+  children,
 }: {
   children: React.ReactNode;
 }) {
