@@ -6,6 +6,7 @@ import { TypeAnimation } from "react-type-animation";
 import { useEffect, useState } from "react";
 import { Download } from "lucide-react";
 import IntroPage from "./Intro";
+import Footer from "./Footer";
 
 export default function Hero() {
   const [open, setOpen] = useState(false);
@@ -22,15 +23,15 @@ export default function Hero() {
       <AnimatePresence>
         {visible && <IntroPage>welcome</IntroPage>}
       </AnimatePresence>
-      <div className="flex flex-col-reverse lg:flex-row justify-center items-center lg:gap-2 lg:pt-2 ">
+      <div className="flex flex-col-reverse lg:flex-row justify-center items-center lg:gap-0 lg:pt-2 ">
         <motion.div
           initial="hidden"
           animate="visible"
           variants={slideInFromLeft(2)}
         >
-          <div className="flex flex-col gap-3 px-6 pt-4 md:pt-0 lg:px-3 lg:pt-12 max-w-2xl">
+          <div className="flex flex-col gap-2 lg:gap-3 px-6 pt-2 lg:px-14">
             <div className="flex justify-between items-center">
-              <h1 className="text-3xl lg:text-3xl font-medium">
+              <h1 className="text-2xl lg:text-3xl font-semibold">
                 {"Hi, it's"} <span className="text-green-500">Egan</span>{" "}
               </h1>
               <a
@@ -44,26 +45,36 @@ export default function Hero() {
             </div>
             <TypeAnimation
               sequence={[
-                "Frontend Web Developer",
+                "Software Engineer",
                 2000,
-                "NextJs Developer",
+                "Blockchain | Web3 | Web2",
                 1000,
               ]}
               wrapper="span"
               speed={30}
-              style={{ fontSize: "20px", display: "" }}
               repeat={Infinity}
-              className="text-gray-600"
+              className="text-purple-800 text-lg lg:text-xl font-semibold"
             />
 
-            <p className="text-sm lg:text-md  text-justify items-center tracking-wide">
-              Welcome to my profile! I am a skilled and dedicated frontend
-              developer specializing in Next.js, a cutting-edge framework that
-              combines the power of React.js with advanced features like
-              server-side rendering and static site generation.
+            <p className="text-sm lg:text-base font-medium text-justify items-center lg:max-w-2xl">
+              Welcome to my profile! I am a skilled and dedicated Software
+              Engineer specializing in{" "}
+              <span className="text-purple-500 font-bold">
+                {" "}
+                blockchain development, Web3, and full-stack development
+              </span>
+              . Transitioning from traditional Web2 applications, I now
+              specialize in Web3 solutions, creating and integrating smart
+              contracts into decentralized applications
+              <span className="text-green-500 font-bold"> dApps</span> using
+              frameworks like{" "}
+              <span className="text-green-500 font-bold">
+                {" "}
+                Web3.js and Ethers.js.
+              </span>
             </p>
-            <div className="flex gap-4 lg:gap-8 items-center font-bold pt-4">
-              <h1 className="text-base font-medium md:text-lg lg:text-lg border-r pr-3 md:pr-4 lg:pr-4">
+            <div className="flex gap-4 lg:gap-8 items-center font-bold pt-3">
+              <h1 className="font-medium text-lg lg:text-xl border-r pr-3">
                 Tech Stack{" "}
               </h1>
               <div className="w-90 flex items-center gap-4">
@@ -93,7 +104,7 @@ export default function Hero() {
                   alt="html"
                   width={100}
                   height={100}
-                  className="w-6 h-6 rounded-full lg:w-8 lg:h-8"
+                  className="w-6 h-6 lg:w-8 lg:h-8"
                 />
               </div>
             </div>
@@ -139,18 +150,27 @@ export default function Hero() {
           initial="hidden"
           animate="visible"
           variants={slideInFromRight(2)}
-          className="w-full lg:w-96 flex justify-center items-center pt-4 lg:pt-0"
+          className="w-full lg:w-96 flex justify-center items-center lg:pr-12"
         >
           <Image
             src="https://github.com/EganAr.png"
             alt="@shadcn"
             width={1000}
             height={1000}
-            className="object-cover w-full h-full max-w-[180px] max-h-[180px] lg:max-w-[320px] lg:max-h-[320px] rounded-full"
+            className="object-cover w-full h-full max-w-[180px] max-h-[180px] md:max-w-[200px] md:max-h-[200px] lg:max-w-[320px] lg:max-h-[320px] rounded-full"
             loading="lazy"
           />
         </motion.div>
       </div>
+
+      <motion.div
+        initial="hidden"
+        animate="visible"
+        variants={slideInFromLeft(2)}
+        className="hidden md:block lg:block md:pt-2 pt-4"
+      >
+        <Footer />
+      </motion.div>
     </>
   );
 }

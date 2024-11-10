@@ -25,12 +25,12 @@ export default function Form() {
     <>
       <title>Contact</title>
 
-      <div className="px-8 lg:px-20 pt-4 lg:pt-0">
+      <div className="px-6 lg:px-14 pt-4 lg:pt-0">
         <h1 className="text-lg font-thin">Contact Me</h1>
       </div>
 
       <form
-        className="w-full px-8 lg:px-20 py-4 flex flex-col gap-2"
+        className="w-full px-6 lg:px-14 py-4 flex flex-col gap-2"
         action={handleSubmit}
       >
         <input

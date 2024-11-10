@@ -24,7 +24,7 @@ export default function AboutPage() {
         {visible && <IntroPage>about</IntroPage>}
       </AnimatePresence>
 
-      <div className="flex flex-col md:flex-row lg:flex-row gap-4 justify-center items-center mx-6 lg:mx-auto mt-6 lg:mt-4">
+      <div className="flex flex-col md:flex-row lg:flex-row gap-4 justify-center items-center px-6">
         <motion.div
           initial="hidden"
           animate="visible"
@@ -72,6 +72,13 @@ export default function AboutPage() {
                 className="w-6 h-6 "
               />
               <Image
+                src={"https://cdn.worldvectorlogo.com/logos/solidity.svg"}
+                alt="html"
+                width={100}
+                height={100}
+                className="w-6 h-6 bg-white rounded"
+              />
+              <Image
                 src={"https://cdn.worldvectorlogo.com/logos/react-2.svg"}
                 alt="html"
                 width={100}
@@ -85,9 +92,17 @@ export default function AboutPage() {
                 height={100}
                 className="w-6 h-6 bg-white rounded-full "
               />
-
               <Image
-                src={"https://cdn.worldvectorlogo.com/logos/tailwindcss.svg"}
+                src={"https://book.getfoundry.sh/images/foundry-banner.png"}
+                alt="html"
+                width={100}
+                height={100}
+                className="w-6 h-6 "
+              />
+              <Image
+                src={
+                  "https://cdn.worldvectorlogo.com/logos/hardhat-seeklogo-com.svg"
+                }
                 alt="html"
                 width={100}
                 height={100}
@@ -114,13 +129,6 @@ export default function AboutPage() {
                 height={100}
                 className="w-6 h-6 rounded-full "
               />
-              <Image
-                src={"https://cdn.worldvectorlogo.com/logos/framer-motion.svg"}
-                alt="html"
-                width={100}
-                height={100}
-                className="w-6 h-6 rounded-full "
-              />
             </div>
           </div>
         </motion.div>
@@ -133,18 +141,21 @@ export default function AboutPage() {
             className="flex flex-col w-full md:w-[450px] lg:w-[600px] bg-neutral-950 rounded h-[220px] md:h-[190px] lg:h-[180px]"
           >
             <h2 className="text-sm md:text-bae lg:text-base text-left font-semibold pt-4 px-2 md:px-4 lg:px-4">
-              🌟 Self-Taught Frontend Developer 🌟
+              🌟 Self-Taught Software Engineer 🌟
             </h2>
             <h1 className="flex items-center px-[18px] gap-x-3 py-2 text-xs text-gray-600">
               <MapPin size={16} className="text-red-700" /> Bandung, Indonesia
             </h1>
 
             <p className="text-xs text-gray-400 text-justify tracking-wide px-4">
-              Hey there! I am a passionate and self-taught Front-end developer
-              with a knack for building modern web applications using Next.js .
-              Through my journey of self-learning and exploration, I have
-              developed a strong foundation in web development and honed my
-              skills in creating dynamic and engaging user interfaces.
+              Hey there! I am a passionate and self-taught{" "}
+              <span className="text-green-500 font-bold">
+                Software Engineer
+              </span>{" "}
+              with a knack for building modern web applications. Through my
+              journey of self-learning and exploration, I have developed a
+              strong foundation in web development and honed my skills in
+              creating dynamic and engaging user interfaces.
             </p>
           </motion.div>
           <motion.div

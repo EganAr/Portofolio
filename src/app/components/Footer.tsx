@@ -6,7 +6,7 @@ import Link from "next/link";
 
 export default function Footer() {
   return (
-    <footer className="flex justify-start items-center px-6 md:px-6 lg:px-12 mt-28 md:mt-20 lg:mt-4">
+    <footer className="flex justify-start items-center px-6 lg:px-14 mt-24 md:mt-8 lg:mt-4  ">
       <div className="flex justify-center gap-2 lg:gap-4">
         <Link href={"https://github.com/EganAr"}>
           <LucideGithub className="w-6 h-6 lg:w-7 lg:h-7 transition-all duration-500 hover:text-purple-400 " />

@@ -1,4 +1,4 @@
-"use client"
+"use client";
 
 import Image from "next/image";
 import Link from "next/link";
@@ -25,34 +25,31 @@ export default function CardWithForm() {
         {visible && <IntroPage>project</IntroPage>}
       </AnimatePresence>
 
-      <div className="overflow-y-auto overflow-hidden md:overflow-hidden lg:overflow-hidden h-[430px] flex flex-col md:flex-row lg:flex-row justify-between items-start mt-2 mx-8 md:mx-6 lg:mx-20 gap-4">
-        <div className="bg-[#0c0b0b] w-[600px] md:w-[500px] lg:w-[500px] md:h-[370px] lg:h-[350px] flex flex-col gap-2 items-start justify-start px-6 py-4 ">
+      <div className="overflow-y-auto flex flex-col md:flex-row lg:flex-row justify-between items-center mx-6 lg:mx-14 gap-4">
+        <div className="bg-[#0c0b0b] h-full w-full flex flex-col gap-2 px-6 py-4 ">
           <Image
-            src="/images/Snecommerce.png"
+            src="/images/Lending-Dashboard.png"
             alt="image"
             width={2000}
             height={2000}
             className="w-64 object-cover"
           />
           <div className="flex items-center gap-3 pt-2">
-            <h1 className="text-sm md:text-lg lg:text-lg">Sn ecommerce</h1>
+            <h1 className="text-sm md:text-lg lg:text-lg">
+              Lending/Borrowing + DEX
+            </h1>
             <Link
-              href="https://sn-ecommerce.vercel.app/"
+              href="https://lending-dex.vercel.app/"
               className="flex gap-2 px-2 py-2 md:py-1.5 lg:py-1.5  text-white bg-red-700 hover:bg-red-800 transition-all duration-500 rounded "
             >
               <ArrowUpRight size={16} /> <p className="text-xs ">Visit App</p>
             </Link>
           </div>
-          <p className="text-xs text-justify tracking-wide text-gray-400 hidden md:block lg:block">
-            This project is an e-commerce fashion store designed to provide a
-            seamless and engaging shopping experience for users, the store
-            offers a robust platform for purchasing, and managing fashion
-            products.
+          <p className="text-xs text-justify tracking-wide text-gray-400 hidden md:block lg:block h-12">
+            This project is an DeFi platform like AAVE that allows users to
+            borrow and lend tokens, and also allows users to swap tokens.
           </p>
-          <p className="block md:hidden lg:hidden">
-            <Desc />
-          </p>
-          <div className="flex gap-4 md:gap-8 lg:gap-8 items-center font-bold pt-4 md:pt-4 lg:pt-4 lg:pb-6">
+          <div className="flex gap-4 md:gap-8 lg:gap-8 items-center font-bold pt-4 md:pt-12 lg:pt-4 lg:pb-6">
             <h1 className="text-sm border-r pr-2 md:pr-4 lg:pr-4">
               Tech Stack{" "}
             </h1>
@@ -62,33 +59,42 @@ export default function CardWithForm() {
                 alt="html"
                 width={100}
                 height={100}
-                className="w-6 h-6 bg-white rounded-full lg:w-6 lg:h-6"
+                className="w-6 h-6 bg-white rounded-full "
               />
               <Image
                 src={"https://cdn.worldvectorlogo.com/logos/typescript.svg"}
                 alt="html"
                 width={100}
                 height={100}
-                className="w-6 h-6 lg:w-6 lg:h-6"
+                className="w-6 h-6 "
               />
               <Image
-                src={"https://cdn.worldvectorlogo.com/logos/sanity.svg"}
+                src={"https://cdn.worldvectorlogo.com/logos/solidity.svg"}
                 alt="html"
                 width={100}
                 height={100}
-                className="w-6 h-6 rounded-full lg:w-6 lg:h-6"
+                className="w-6 h-6 bg-white rounded"
               />
               <Image
-                src={"https://cdn.worldvectorlogo.com/logos/stripe-4.svg"}
+                src={
+                  "https://cdn.worldvectorlogo.com/logos/hardhat-seeklogo-com.svg"
+                }
                 alt="html"
                 width={100}
                 height={100}
-                className="w-6 h-6 lg:w-6 lg:h-6"
+                className="w-6 h-6 "
+              />
+              <Image
+                src={"https://book.getfoundry.sh/images/foundry-banner.png"}
+                alt="html"
+                width={100}
+                height={100}
+                className="w-6 h-6 "
               />
             </div>
           </div>
         </div>
-        <div className="bg-[#0c0b0b] w-[600px] md:w-[500px] lg:w-[500px] md:h-[370px] lg:h-[350px] flex flex-col gap-2 items-start justify-start px-6 pt-4 md:pb-8 lg:pb-8">
+        <div className="bg-[#0c0b0b] w-full flex flex-col gap-2 px-6 py-4 my-6 md:my-0 lg:my-0">
           <Image
             src="/images/SnBlog.png"
             alt="image"
@@ -105,14 +111,11 @@ export default function CardWithForm() {
               <ArrowUpRight size={16} /> <p className="text-xs">Visit App</p>
             </Link>
           </div>
-          <p className="text-xs text-justify tracking-wide text-gray-400 hidden md:block lg:block">
+          <p className="text-xs text-justify tracking-wide text-gray-400 hidden md:block lg:block h-12">
             A full-featured blog application that allows users to sign up, sign
             in, create, delete blog posts, and update their profiles.
           </p>
-          <p className="block md:hidden lg:hidden">
-            <Desc2 />
-          </p>
-          <div className="flex gap-4 md:gap-8 lg:gap-8 items-center font-bold py-4 md:pt-12 lg:pt-12">
+          <div className="flex gap-4 md:gap-8 lg:gap-8 items-center font-bold pt-4 md:pt-12 lg:pt-4 lg:pb-6">
             <h1 className="text-sm border-r pr-2 lg:pr-4">Tech Stack </h1>
             <div className="w-90 flex items-center gap-3 lg:gap-4">
               <Image
@@ -134,14 +137,14 @@ export default function CardWithForm() {
                 alt="html"
                 width={100}
                 height={100}
-                className="w-5 h-5  rounded-full "
+                className="w-6 h-6"
               />
               <Image
                 src={"https://cdn.worldvectorlogo.com/logos/firebase-1.svg"}
                 alt="html"
                 width={100}
                 height={100}
-                className="w-6 h-6 "
+                className="w-6 h-6"
               />
             </div>
           </div>

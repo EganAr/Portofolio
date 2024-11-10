@@ -7,13 +7,11 @@ import { usePathname } from "next/navigation";
 export default function Navbar() {
   const pathname = usePathname();
   return (
-    <div className="flex flex-row justify-between px-6 lg:px-14  pt-4 lg:pt-8 gap-4">
-      <h1 className="lg:text-xl font-medium md:text-lg text-base flex justify-start ">
-        Ega
-        <span className="">n Arden</span>
-        na
+    <nav className="flex flex-row justify-between px-6 lg:px-14 py-4 lg:pt-8 gap-4">
+      <h1 className="lg:text-xl font-bold md:text-lg text-base flex justify-start ">
+        Egan Ardenna
       </h1>
-      <div className="flex flex-col justify-center gap-1 text-xs lg:text-sm ">
+      <ul className="flex flex-col justify-center gap-1 text-xs lg:text-sm font-semibold">
         <Link
           href={"/"}
           className="transition-all duration-500 hover:text-purple-700"
@@ -54,8 +52,8 @@ export default function Navbar() {
             "My Projects"
           )}
         </Link>
-      </div>
-    </div>
+      </ul>
+    </nav>
   );
 }
 
